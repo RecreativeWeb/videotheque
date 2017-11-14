@@ -1,0 +1,11 @@
+recreative_web_back:
+    resource: "@RecreativeWebBackBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+recreative_web_front:
+    resource: "@RecreativeWebFrontBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+

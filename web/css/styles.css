@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif; }
+  html body {
+    background-color: #ECEFF1; }
+
+.front {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #78909C;
+  color: #ECEFF1; }
+  .front h1 {
+    width: 30%; }
+  .front nav {
+    width: 30%; }
+    .front nav ul {
+      display: flex;
+      justify-content: space-around; }
+      .front nav ul li {
+        list-style: none; }
+        .front nav ul li a {
+          text-decoration: none;
+          color: #ECEFF1; }
+          .front nav ul li a:hover {
+            color: #263238; }
+
+.back {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #78909C;
+  color: #ECEFF1; }
+  .back h1 {
+    width: 30%; }
+  .back nav {
+    width: 30%; }
+    .back nav ul {
+      display: flex;
+      justify-content: space-around; }
+      .back nav ul li {
+        list-style: none; }
+        .back nav ul li a {
+          text-decoration: none;
+          color: #ECEFF1; }
+          .back nav ul li a:hover {
+            color: #263238; }
+
+.listeFilms {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 3rem; }
+  .listeFilms article {
+    width: 22%;
+    border: 2px solid #CFD8DC;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    padding: 1rem; }
+    .listeFilms article:hover {
+      border: 2px solid #607D8B; }
+    .listeFilms article h3 {
+      text-align: center;
+      margin-bottom: 1rem; }
+    .listeFilms article .flex {
+      display: flex; }
+      .listeFilms article .flex li {
+        list-style-type: none;
+        font-size: .9rem; }
+        .listeFilms article .flex li a {
+          color: #263238; }
+      .listeFilms article .flex img {
+        display: block; }
+
+.creaForm {
+  width: 50%;
+  margin: 0 auto; }
+  .creaForm fieldset {
+    padding: 2rem; }
+  .creaForm legend {
+    padding: .7rem; }
+  .creaForm label {
+    display: block;
+    width: 15rem; }
+  .creaForm input {
+    width: 15rem; }
+  .creaForm textarea {
+    margin-top: 1rem;
+    margin-bottom: .6rem; }
+  .creaForm input[type="submit"] {
+    width: 8rem;
+    float: right;
+    cursor: pointer; }
+
+/*# sourceMappingURL=styles.css.map */

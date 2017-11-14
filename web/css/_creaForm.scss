@@ -1,0 +1,26 @@
+.creaForm{
+	width: 50%;
+	margin: 0 auto;
+	fieldset{
+		padding: 2rem;
+	}
+	legend{
+		padding: .7rem;
+	}
+	label{
+		display: block;
+		width: 15rem;	
+	}
+	input{
+		width: 15rem;	
+	}
+	textarea{
+		margin-top: 1rem;
+		margin-bottom: .6rem;		
+	}
+	input[type="submit"]{
+		width: 8rem;
+		float: right;
+		cursor: pointer;	
+	}
+}

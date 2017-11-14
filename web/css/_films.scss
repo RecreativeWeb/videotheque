@@ -1,0 +1,32 @@
+.listeFilms{
+	display: flex;
+	justify-content: flex-start;
+	padding-top: 3rem;
+	article{
+		width: 22%;
+		border: 2px solid #CFD8DC;
+		margin-right: .5rem;
+		margin-left: .5rem;
+		padding: 1rem;
+		&:hover{
+			border: 2px solid #607D8B;
+		}
+		h3{
+			text-align: center;
+			margin-bottom: 1rem;
+		}
+		.flex{
+			display: flex;
+			li{
+				list-style-type: none;
+				font-size: .9rem;
+				a{
+					color: #263238;
+				}
+			}
+			img{
+				display: block;
+			}
+		}
+	}
+}

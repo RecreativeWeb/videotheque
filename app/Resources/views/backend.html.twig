@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Vidéothèque{% endblock %}</title>
+	{% block stylesheets %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet">
+	{% endblock %}
+</head>
+<body>
+	{% block body %}
+		{% block header %}
+			<header class="back">
+				<h1>Backend</h1>
+				<nav>
+					<ul>
+						<li><a href="">Retour site</a></li>
+					</ul>
+				</nav>
+			</header>
+		{% endblock %}
+		{% block section %}
+		{% endblock %}
+	{% endblock %}
+    {% block javascripts %}{% endblock %}
+</body>
+</html>
