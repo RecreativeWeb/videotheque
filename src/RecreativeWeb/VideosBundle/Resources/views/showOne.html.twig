@@ -1,0 +1,17 @@
+{% extends '::frontend.html.twig' %}
+
+{% block section %}
+<span class="retour"><a href="http://127.0.0.1:8000">Retour films</a></span>
+<section class="unFilm">
+	<article>
+		<h3>{{ film.titre }}</h3>
+		<ul>
+			<li><strong>Réalisateur: {{ film.realisateur }}</strong></li>
+			<li>Genre: {{ film.genre }}</li>
+			<li><i>Année de sortie: {{ film.annee | date('Y',"Europe/Paris") }}</i></li>
+		</ul>
+		<img src="{{ asset ('images/' ~ film.bigCover) }}" alt="cover" />	
+		<p>{{ film.synopsis }}</p>
+	</article>
+</section>
+{% endblock %}

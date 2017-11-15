@@ -1,0 +1,22 @@
+{% extends '::backend.html.twig' %}
+
+{% block section %}
+
+	{{ form_start(form_film) }}
+	<fieldset>
+		<legend>Création d'une fiche film</legend>
+		{{ form_row(form_film.titre) }}
+		{{ form_row(form_film.genre) }}
+		{{ form_row(form_film.annee) }}
+		{{ form_row(form_film.realisateur) }}
+		{{ form_row(form_film.synopsis) }}
+	    {{ form_row(form_film.cover) }}
+	    {{form_row(form_film.bigCover)}}
+	    {{form_row(form_film.valider)}}
+	</fieldset>
+
+	{{ form_rest(form_film) }}
+
+	{{ form_end(form_film) }}
+
+{% endblock %}

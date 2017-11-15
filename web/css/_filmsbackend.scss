@@ -1,0 +1,42 @@
+.liencreer{
+	display: block;
+	padding-top: 1rem;
+	margin-bottom: .8rem;
+}
+
+.creer{
+	color: black;
+	text-decoration: none;
+	font-size: .8rem;
+	margin-left: 1rem;
+}
+
+form{
+	margin-bottom: 2rem;
+	.rechercher{
+		font-size: .8rem;
+		margin-left: 1rem;
+	}
+}
+
+	
+
+.filmsback{
+	display: flex;
+	margin: .4rem 1rem;
+	h3{
+		font-size: 1rem;
+	}
+	ul{
+		display: flex;
+		li{
+			list-style: none;
+			margin-left: 1rem;
+			a{
+				color: black;
+				text-decoration: none;
+				font-size: 0.8rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{% extends '::frontend.html.twig' %}
+
+{% block section %}
+<h2 class="titreSection">{{ films | length }} films recencés</h2>
+<section class="listeFilms">
+	{% for e in films %}
+		<article>
+			<h3>{{ e.titre }}</h3>
+			<div class="flex">
+				<ul>
+					<li><strong>Réalisateur: {{ e.realisateur }}</strong></li>
+					<li>Genre: {{ e.genre }}</li>
+					<li><i>Année de sortie: {{ e.annee | date('Y',"Europe/Paris") }}</i></li>
+					<li><a href="{{ path('ficheFilm', {'id':e.id}) }}">Voir la fiche</a></li>
+				</ul>
+				<img src="{{ asset ('images/' ~ e.Cover) }}" alt="cover">
+			</div>
+		</article>
+	{% endfor %}
+</section>
+{% endblock %}
+

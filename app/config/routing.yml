@@ -1,10 +1,10 @@
-recreative_web_back:
-    resource: "@RecreativeWebBackBundle/Controller/"
+recreative_web_reverse_table:
+    resource: "@RecreativeWebReverseTableBundle/Controller/"
     type:     annotation
     prefix:   /
 
-recreative_web_front:
-    resource: "@RecreativeWebFrontBundle/Controller/"
+recreative_web_videos:
+    resource: "@RecreativeWebVideosBundle/Controller/"
     type:     annotation
     prefix:   /
 
