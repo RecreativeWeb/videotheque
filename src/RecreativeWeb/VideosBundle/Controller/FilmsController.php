@@ -32,7 +32,7 @@ class FilmsController extends Controller
             return $this->redirect($this->generateUrl('films'));
         }
 
-        return $this->render('RecreativeWebVideosBundle::create.html.twig',array('form_film'=>$form->createView()));
+        return $this->render('RecreativeWebVideosBundle::createFilm.html.twig',array('form_film'=>$form->createView()));
     }
 
     /**
@@ -44,7 +44,7 @@ class FilmsController extends Controller
 
     	$films = $em->getRepository('RecreativeWeb\VideosBundle\Entity\Film')->findAll();
 
-        return $this->render('RecreativeWebVideosBundle::showAll.html.twig',compact('films'));
+        return $this->render('RecreativeWebVideosBundle::showAllFilms.html.twig',compact('films'));
     }
    
     /**
@@ -56,39 +56,49 @@ class FilmsController extends Controller
 
     	$film = $em->getRepository('RecreativeWeb\VideosBundle\Entity\Film')->find($id);
 
-        return $this->render('RecreativeWebVideosBundle::showOne.html.twig',compact('film'));
+        return $this->render('RecreativeWebVideosBundle::showOneFilm.html.twig',compact('film'));
     }
    
    	/**
-     * @Route("/create", name="modification")
+     * @Route("/modify/{id}", name="modification")
      */
-    public function updateAction(Request $request)
+    public function updateAction(Request $request, $id)
     {
-        $em = $this->getDoctrine()->getManager();
-        $film = $em->getRepository('RecreativeWeb\VideosBundle\Entity\Film')->find(1);
-        $formFilm = $this->createForm(FilmType::Class, $film);
-        $formFilm->add('modifier', SubmitType::Class, array(
-            'label'=>'Modifier'
-        ));
+        
 
-        $formFilm->handleRequest($request);
-        if($request->isMethode('post') && $formFilm->isValid()){
-            $film = $formFilm->getData();
+        $em = $this->getDoctrine()->getManager();
+        $film = $em->getRepository('RecreativeWeb\VideosBundle\Entity\Film')->find($id);
+        $form = $this->createForm(FilmType::class, $film,array('attr'=>array('class'=>'creaForm', 'enctype'=>'multipart/form-data')))
+        ->add('valider',SubmitType::class, array(
+            'label'=>'Valider'
+        ));       
+
+        $form->handleRequest($request);
+
+        if($request->isMethod('post') && $form->isValid()){
+            $film = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($film);
-            $em->flush;
+            $em->flush();
 
             return $this ->redirect('films');
         }
+        return $this->render('RecreativeWebVideosBundle::modifyFilm.html.twig',array('form_film'=>$form->createView()));
     }
 
     /**
-     * @Route("/", name="")
+     * @Route("/delete/{id}", name="delete")
      */
-//    public function deleteAction($id)
-//    {
+   public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('RecreativeWebVideosBundle:Film');
 
-//    }
+        $em->remove($repository->find($id));
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('films'));
+    }
 }
 
 

@@ -5,8 +5,10 @@ namespace RecreativeWeb\VideosBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+
 //use RecreativeWeb\VideosBundle\Form\FilmType;
 use RecreativeWeb\VideoBundle\Form\TinyMceType;
+
 
 class FilmsBackendController extends Controller
 {
@@ -15,11 +17,16 @@ class FilmsBackendController extends Controller
      */
     public function showAllAction()
     {
-    	$em = $this->getDoctrine()->getManager();
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')) {
 
-    	$films = $em->getRepository('RecreativeWeb\VideosBundle\Entity\Film')->findAll();
+            $em = $this->getDoctrine()->getManager();
 
-        return $this->render('RecreativeWebVideosBundle::showAllBackend.html.twig',compact('films'));
+            $films = $em->getRepository('RecreativeWeb\VideosBundle\Entity\Film')->findAll();
+
+            return $this->render('RecreativeWebVideosBundle::showAllBackend.html.twig',compact('films'));
+                
+        }
+        return $this->redirectToRoute('films');
     }
 
     /**
@@ -29,5 +36,4 @@ class FilmsBackendController extends Controller
     {
     	
     }
-   
 }

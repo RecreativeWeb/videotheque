@@ -1,18 +1,25 @@
 {% extends '::backend.html.twig' %}
 
 {% block section %}
-<span class="liencreer"><a href="{{ path('modification') }}" class="creer"><i>&raquo; Créer une nouvelle fiche</i></a></span>
-<form action="">
-	<label for="rechercher" class="rechercher"><i>&raquo; Rechercher</i></label>
-	<input type="text" />
-</form>
-	{% for e in films %}
-		<article class="filmsback">
-			<h3>- {{ e.titre }}</h3>
-			<ul>
-				<li><a href="{{ path('modification') }}"><i>Modifier</i></a></li>
-				<li><a href=""><i>Supprimer</i></a></li>
-			</ul>
-		</article>
-	{% endfor %}
+<section class="modif"></section>
+
+	<div class="modifFilm"></div>
+		<h2>Modification des films</h2>
+		<span class="liencreer"><a href="{{ path('creation') }}" class="creer"><i>&raquo; Créer une nouvelle fiche film</i></a></span>
+		<form action="">
+			<label for="rechercher" class="rechercher"><i>&raquo; Rechercher</i></label>
+			<input type="text" />
+		</form>
+		{% for e in films %}
+			<article class="filmsback">
+				<h3>- {{ e.titre }}</h3>
+				<ul>
+					<li><a href="{{ path('modification', {'id': e.id}) }}"><i>Modifier</i></a></li>
+					<li><a href="{{ path('delete', {'id': e.id}) }}"><i>Supprimer</i></a></li>
+				</ul>
+			</article>
+		{% endfor %}
+	</div>
+	
+</section>
 {% endblock %}

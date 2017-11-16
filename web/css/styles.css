@@ -63,7 +63,8 @@ html {
     border: 2px solid #CFD8DC;
     margin-right: .5rem;
     margin-left: .5rem;
-    padding: 1rem; }
+    padding: 1rem;
+    margin-bottom: 1rem; }
     .listeFilms article:hover {
       border: 2px solid #607D8B; }
     .listeFilms article h3 {
@@ -157,5 +158,20 @@ form {
     width: 8rem;
     float: right;
     cursor: pointer; }
+
+.login {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 5rem; }
+  .login fieldset {
+    padding: 2rem; }
+    .login fieldset legend {
+      padding: 1rem; }
+    .login fieldset label {
+      width: 20%; }
+    .login fieldset input {
+      width: 40%; }
+    .login fieldset input[type="submit"] {
+      width: 20%; }
 
 /*# sourceMappingURL=styles.css.map */

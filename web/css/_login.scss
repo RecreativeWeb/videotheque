@@ -1,0 +1,21 @@
+.login{
+	width: 30%;
+	margin: 0 auto;
+	margin-top: 5rem;
+	fieldset{
+		padding: 2rem;
+		legend{
+			padding: 1rem;
+		}
+		label{
+			width: 20%;
+		}
+		input{
+			width: 40%;
+		}
+		input[type="submit"]{
+			width: 20%;
+		}
+	}
+
+}

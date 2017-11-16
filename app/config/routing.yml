@@ -8,4 +8,18 @@ recreative_web_videos:
     type:     annotation
     prefix:   /
 
+login:
+    path: /login
+    defaults: { _controller: RecreativeWebUserBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
 

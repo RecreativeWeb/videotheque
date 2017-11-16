@@ -1,0 +1,19 @@
+<!--
+	<div class="modifRealisateur"></div>
+		<h2>Modification des réalisateurs</h2>
+		<span class="liencreer"><a href="{{ path('creationFilm') }}" class="creer"><i>&raquo; Créer une nouvelle fiche réalisateur</i></a></span>
+		<form action="">
+			<label for="rechercher" class="rechercher"><i>&raquo; Rechercher</i></label>
+			<input type="text" />
+		</form>
+		{% for e in reals %}
+			<article class="filmsback">
+				<h3>- {{ e.prenom ~ e.nom }}</h3>
+				<ul>
+					<li><a href="{{ path('modificationFilm', {'id': e.id}) }}"><i>Modifier</i></a></li>
+					<li><a href="{{ path('deleteFilm', {'id': e.id}) }}"><i>Supprimer</i></a></li>
+				</ul>
+			</article>
+		{% endfor %}
+	</div>
+-->

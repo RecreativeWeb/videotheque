@@ -1,0 +1,13 @@
+{% extends '::frontend.html.twig' %}
+
+{% block section %}
+<h2 class="titreSection">{{ reals | length }} réalisateurs recencés</h2>
+<section class="listeFilms">
+	{% for e in reals %}
+		<article>
+			<h3>{{ e.prenom ~ e.nom }}</h3>
+			<span><a href="{{ path('realisateurs', {'id':e.id}) }}">Voir la fiche réalisateur</a></span>
+		</article>
+	{% endfor %}
+</section>
+{% endblock %}
